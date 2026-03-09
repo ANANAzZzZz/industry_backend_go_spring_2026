@@ -13,7 +13,7 @@ func ParallelMap[T any, R any](
 	fn func(context.Context, T) (R, error),
 ) ([]R, error) {
 	if in == nil || len(in) == 0 {
-		return nil, errors.New("wrong input slice")
+		return nil, nil
 	}
 
 	if workers < 1 {
